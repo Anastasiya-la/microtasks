@@ -96,7 +96,13 @@ function App() {
             <ButtonUseState name={'number'} callBack={onClickHandler}/>
             <ButtonUseState name={0} callBack={onClickHandler2}/>
             <hr/>
-            <Money money={money} currentMoney={currentMoney} onClickFilterHandler={onClickFilterHandler}/>
+            {/*<Money money={money} currentMoney={currentMoney} onClickFilterHandler={onClickFilterHandler}/>*/}
+            <Money money={money} currentMoney={currentMoney}/>
+            <div style={{marginLeft: '35px'}}>
+                <Button name={'all'} callBack={() => onClickFilterHandler('all')}/>
+                <Button name={'rubles'} callBack={() => onClickFilterHandler('rubles')}/>
+                <Button name={'dollars'} callBack={() => onClickFilterHandler('dollars')}/>
+            </div>
         </div>
     );
 }

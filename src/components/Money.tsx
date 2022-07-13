@@ -3,7 +3,7 @@ import {FilterType} from "../App";
 type MoneyPropsType = {
     money: Array<MoneyType>
     currentMoney: MoneyType[]
-    onClickFilterHandler: (nameButton: FilterType) => void
+    // onClickFilterHandler: (nameButton: FilterType) => void
 }
 type MoneyType = {
     banknots: string
@@ -28,11 +28,11 @@ export const Money = (props: MoneyPropsType) => {
                     )
                 })}
             </ul>
-            <div style={{marginLeft: '35px'}}>
+            {/*    <div style={{marginLeft: '35px'}}>
                 <button onClick={() => props.onClickFilterHandler('all')}>all</button>
                 <button onClick={() => props.onClickFilterHandler('rubles')}>rubles</button>
                 <button onClick={() => props.onClickFilterHandler('dollars')}>dollars</button>
-            </div>
+            </div>*/}
         </>
     )
 }

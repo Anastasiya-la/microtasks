@@ -1,4 +1,4 @@
-import React, {MouseEvent} from 'react';
+import React, {MouseEvent, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {Header} from "./site/Header";
@@ -6,6 +6,7 @@ import {Body} from "./site/Body";
 import {Footer} from "./site/Footer";
 import {NewComponent} from "./NewComponent";
 import {Button} from "./components/Button";
+import {ButtonUseState} from "./components/ButtonUseState";
 
 function App() {
     const students = [
@@ -34,6 +35,18 @@ function App() {
         console.log('Iam stupid button')
     }
 
+    /* let a = 1;*/
+    let [a, setA] = useState(1);
+
+    const onClickHandler = () => {
+        setA(++a);
+        console.log(a);
+    }
+    const onClickHandler2 = () => {
+        setA(a = 0);
+        console.log(a);
+    }
+
     return (
         <div>
             <Header title={'NEW BODY'}/>
@@ -45,6 +58,10 @@ function App() {
             <Button name={'MyYouTubeChannel-1'} callBack={() => Button1Foo('Iam Vasya', 21, 'live in Minsk')}/>
             <Button name={'MyYouTubeChannel-2'} callBack={() => Button2Foo('Iam Ivan')}/>
             <Button name={'Stupid Button'} callBack={Button3Foo}/>
+            <hr/>
+            <h1>{a}</h1>
+            <ButtonUseState name={'number'} callBack={onClickHandler}/>
+            <ButtonUseState name={0} callBack={onClickHandler2}/>
         </div>
     );
 }
